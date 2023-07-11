@@ -17,7 +17,15 @@
   section
 >
   <#if section="header">
-    ${msg("loginAccountTitle")}
+    Ingresa a tu cuenta
+    <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
+      <div class="text-center text-base">
+        o
+        <@link.kw href=url.registrationUrl>
+          crea tu cuenta de usuario gratis
+        </@link.kw>
+      </div>
+    </#if>
   <#elseif section="form">
     <#if realm.password>
       <@form.kw
@@ -52,13 +60,13 @@
             <#if realm.rememberMe && !usernameEditDisabled??>
               <@checkbox.kw
                 checked=login.rememberMe??
-                label=msg("rememberMe")
+                label=msg("Recordarme")
                 name="rememberMe"
               />
             </#if>
             <#if realm.resetPasswordAllowed>
-              <@link.kw color="primary" href=url.loginResetCredentialsUrl size="small">
-                ${msg("doForgotPassword")}
+              <@link.kw href=url.loginResetCredentialsUrl size="small">
+                Olvidé mi contraseña
               </@link.kw>
             </#if>
           </div>
@@ -71,14 +79,6 @@
       </@form.kw>
     </#if>
   <#elseif section="info">
-    <#if realm.password && realm.registrationAllowed && !registrationDisabled??>
-      <div class="text-center">
-        ${msg("noAccount")}
-        <@link.kw color="primary" href=url.registrationUrl>
-          ${msg("doRegister")}
-        </@link.kw>
-      </div>
-    </#if>
   <#elseif section="socialProviders">
     <#if realm.password && social.providers??>
       <@identityProvider.kw providers=social.providers />

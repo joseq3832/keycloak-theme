@@ -10,7 +10,7 @@
   rest...
 >
   <div>
-    <label class="sr-only" for="${name}">
+    <label class="mb-1 ml-2 text-sm text-gray-500" for="${name}">
       ${label}
     </label>
     <input
@@ -22,7 +22,7 @@
       class="block border-secondary-200 mt-1 rounded-md w-full focus:border-primary-300 focus:ring focus:ring-primary-200 focus:ring-opacity-50 sm:text-sm"
       id="${name}"
       name="${name}"
-      placeholder="${label}"
+      <#--  placeholder="${label}"  -->
 
       <#list rest as attrName, attrValue>
         ${attrName}="${attrValue}"
