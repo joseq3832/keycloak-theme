@@ -3,6 +3,7 @@
 <#import "components/atoms/button-group.ftl" as buttonGroup>
 <#import "components/atoms/form.ftl" as form>
 <#import "components/atoms/input.ftl" as input>
+<#import "components/atoms/cities.ftl" as cities>
 <#import "components/atoms/link.ftl" as link>
 
 <@layout.registrationLayout
@@ -11,7 +12,7 @@
   section
 >
   <#if section="header">
-    ${msg("registerTitle")}
+    ${msg("Registro")}
   <#elseif section="form">
     <@form.kw action=url.registrationAction method="post">
       <@input.kw
@@ -42,6 +43,7 @@
         type="email"
         value=(register.formData.email)!''
       />
+      <@cities.kw />
       <#if !realm.registrationEmailAsUsername>
         <@input.kw
           autocomplete="username"
