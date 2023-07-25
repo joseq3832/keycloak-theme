@@ -5,6 +5,7 @@
 <#import "components/atoms/form.ftl" as form>
 <#import "components/atoms/input.ftl" as input>
 <#import "components/atoms/link.ftl" as link>
+<#import "components/atoms/concent.ftl" as concent>
 <#import "components/molecules/identity-provider.ftl" as identityProvider>
 <#import "features/labels/username.ftl" as usernameLabel>
 
@@ -83,5 +84,6 @@
     <#if realm.password && social.providers??>
       <@identityProvider.kw providers=social.providers />
     </#if>
+  <@concent.kw />
   </#if>
 </@layout.registrationLayout>
