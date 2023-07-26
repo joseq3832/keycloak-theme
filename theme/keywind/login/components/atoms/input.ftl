@@ -33,5 +33,24 @@
         ${message?no_esc}
       </div>
     </#if>
+    <div class="mt-2 text-red-600 text-sm" id="${name}-required-message" style="display: none;">
+      Campo Requerido
+    </div>
   </div>
+  <script>
+    // JavaScript code to show/hide the required message for each component
+    (function() {
+      const inputElement = document.getElementById("${name}");
+      const requiredMessageElement = document.getElementById("${name}-required-message");
+
+      inputElement.addEventListener("input", () => {
+        const value = inputElement.value.trim();
+        if (value === "") {
+          requiredMessageElement.style.display = "block";
+        } else {
+          requiredMessageElement.style.display = "none";
+        }
+      });
+    })();
+  </script>
 </#macro>
