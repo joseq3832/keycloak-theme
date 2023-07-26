@@ -44,7 +44,7 @@
           autofocus=true
           disabled=usernameEditDisabled??
           invalid=messagesPerField.existsError("username", "password")
-          label=usernameLabel
+          label="Email *"
           message=kcSanitize(messagesPerField.getFirstError("username", "password"))
           name="username"
           type="text"
@@ -52,7 +52,7 @@
         />
         <@input.kw
           invalid=messagesPerField.existsError("username", "password")
-          label=msg("password")
+          label="Contraseña *"
           name="password"
           type="password"
         />
