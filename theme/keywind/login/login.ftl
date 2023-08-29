@@ -44,7 +44,7 @@
           autofocus=true
           disabled=usernameEditDisabled??
           invalid=messagesPerField.existsError("username", "password")
-          label="Email *"
+          label="Correo electrónico *"
           message=kcSanitize(messagesPerField.getFirstError("username", "password"))
           name="username"
           type="email"

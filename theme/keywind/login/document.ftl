@@ -11,11 +11,7 @@
     </#list>
   </#if>
 
-  <#if properties.favicons?has_content>
-    <#list properties.favicons?split(" ") as favicon>
-      <link href="${url.resourcesPath}/${favicon?split('==')[0]}" rel="${favicon?split('==')[1]}">
-    </#list>
-  </#if>
+  <link href="https://d1zx2a1kk4wi0g.cloudfront.net/favicons/seminuevos.ico" rel="icon">
 
   <#if properties.styles?has_content>
     <#list properties.styles?split(" ") as style>

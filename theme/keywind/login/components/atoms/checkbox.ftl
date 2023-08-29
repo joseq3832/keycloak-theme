@@ -1,9 +1,9 @@
 <#macro kw checked=false label="" name="" rest...>
-  <div class="flex items-center">
+  <div class="flex items-center !cursor-pointer">
     <input
       <#if checked>checked</#if>
 
-      class="border-secondary-200 h-4 rounded text-primary-600 w-4 focus:ring-primary-200 focus:ring-opacity-50"
+      class="border-secondary-200 h-4 rounded text-primary-600 w-4 focus:ring-primary-200 focus:ring-opacity-50 !cursor-pointer"
       id="${name}"
       name="${name}"
       type="checkbox"
@@ -12,7 +12,7 @@
         ${attrName}="${attrValue}"
       </#list>
     >
-    <label class="ml-2 text-secondary-600 text-sm" for="${name}">
+    <label class="ml-2 text-secondary-600 text-sm !cursor-pointer" for="${name}">
       ${label}
     </label>
   </div>
