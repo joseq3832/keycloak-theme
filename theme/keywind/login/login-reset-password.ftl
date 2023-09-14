@@ -1,4 +1,4 @@
-<#import "template.ftl" as layout>
+<#import "layouts/main.ftl" as layout>
 <#import "components/atoms/button.ftl" as button>
 <#import "components/atoms/button-group.ftl" as buttonGroup>
 <#import "components/atoms/form.ftl" as form>
@@ -15,14 +15,22 @@
   section
 >
   <#if section="header">
-    ${msg("emailForgotTitle")}
+    ${msg("hola")}
   <#elseif section="form">
+    <div>
+      <h2 class="font-semibold">
+        ¿Olvidaste tu constraseña?
+      </h2>
+      <p class="text-sm text-gray-600 pt-3">
+        Ingresa tu direccion de correo registrado para recuperar el acceso a tu cuenta
+      </p>
+    </div>
     <@form.kw action=url.loginAction method="post">
       <@input.kw
         autocomplete=realm.loginWithEmailAllowed?string("email", "username")
         autofocus=true
         invalid=messagesPerField.existsError("username")
-        label=usernameLabel
+        label="Correo electrócico"
         message=kcSanitize(messagesPerField.get("username"))
         name="username"
         type="text"
@@ -30,15 +38,13 @@
       />
       <@buttonGroup.kw>
         <@button.kw color="primary" type="submit">
-          ${msg("doSubmit")}
+          ${msg("Recuperar contraseña")}
         </@button.kw>
       </@buttonGroup.kw>
     </@form.kw>
-  <#elseif section="info">
-    ${msg("emailInstruction")}
   <#elseif section="nav">
     <@link.kw color="secondary" href=url.loginUrl size="small">
-      ${kcSanitize(msg("backToLogin"))?no_esc}
+      ${kcSanitize(msg("Cancelar"))?no_esc}
     </@link.kw>
   </#if>
 </@layout.registrationLayout>
