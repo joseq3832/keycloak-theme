@@ -33,7 +33,7 @@
                 autocomplete="new-password"
                 autofocus=true
                 invalid=messagesPerField.existsError("password", "password-confirm")
-                label=msg("passwordNew")
+                label=msg("Nueva contraseña *")
                 name="password-new"
                 type="password"
               />
@@ -51,7 +51,7 @@
               <@input.kw
                 autocomplete="new-password"
                 invalid=messagesPerField.existsError("password-confirm")
-                label=msg("passwordConfirm")
+                label=msg("Confirma la contraseña *")
                 message=kcSanitize(messagesPerField.get("password-confirm"))
                 name="password-confirm"
                 type="password"

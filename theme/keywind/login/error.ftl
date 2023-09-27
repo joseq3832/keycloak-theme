@@ -9,9 +9,11 @@
     <@alert.kw color="error">${kcSanitize(message.summary)?no_esc}</@alert.kw>
     <#if !skipLink??>
       <#if client?? && client.baseUrl?has_content>
-        <@link.kw color="secondary" href=client.baseUrl size="small">
-          ${kcSanitize(msg("backToApplication"))?no_esc}
-        </@link.kw>
+        <div class="flex items-center justify-center mt-1">
+          <@link.kw color="secondary" href=client.baseUrl size="small">
+            ${kcSanitize(msg("backToApplication"))?no_esc}
+          </@link.kw>
+        </div>
       </#if>
     </#if>
   </#if>

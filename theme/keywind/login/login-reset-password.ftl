@@ -30,10 +30,10 @@
         autocomplete=realm.loginWithEmailAllowed?string("email", "username")
         autofocus=true
         invalid=messagesPerField.existsError("username")
-        label="Correo electrócico"
+        label="Correo electrócico *"
         message=kcSanitize(messagesPerField.get("username"))
         name="username"
-        type="text"
+        type="email"
         value=(auth?has_content && auth.showUsername())?then(auth.attemptedUsername, '')
       />
       <@buttonGroup.kw>

@@ -28,12 +28,12 @@
               <div class="flex max-w-md w-full items-center justify-center my-8 mx-auto">
                 <div class="w-full">
                   <div class="m-0 space-y-4">
-                    <div class="grid grid-cols-2 gap-4 w-full">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
                       <@input.kw
                         autocomplete="given-name"
                         autofocus=true
                         invalid=messagesPerField.existsError("firstName")
-                        label=msg("firstName")
+                        label=msg("Nombre *")
                         message=kcSanitize(messagesPerField.get("firstName"))
                         name="firstName"
                         type="text"
@@ -42,7 +42,7 @@
                       <@input.kw
                         autocomplete="family-name"
                         invalid=messagesPerField.existsError("lastName")
-                        label=msg("lastName")
+                        label=msg("Apellido *")
                         message=kcSanitize(messagesPerField.get("lastName"))
                         name="lastName"
                         type="text"
@@ -52,7 +52,7 @@
                     <@input.kw
                       autocomplete="email"
                       invalid=messagesPerField.existsError("email")
-                      label=msg("email")
+                      label=msg("Email *")
                       message=kcSanitize(messagesPerField.get("email"))
                       name="email"
                       type="email"
@@ -74,7 +74,7 @@
                     <@input.kw
                       autocomplete="new-password"
                       invalid=messagesPerField.existsError("password", "password-confirm")
-                      label=msg("password")
+                      label=msg("Contraseña *")
                       message=kcSanitize(messagesPerField.getFirstError("password", "password-confirm"))
                       name="password"
                       type="password"
@@ -93,7 +93,7 @@
                     <@input.kw
                       autocomplete="new-password"
                       invalid=messagesPerField.existsError("password-confirm")
-                      label=msg("passwordConfirm")
+                      label=msg("Confirma la contraseña *")
                       message=kcSanitize(messagesPerField.get("password-confirm"))
                       name="password-confirm"
                       type="password"
@@ -111,8 +111,8 @@
                       <label for="user.attributes.subscribe" class="text-sm hover:cursor-pointer">Acepto recibir boletines y correos informativos (Opcional)</label>
                     </div>
                     <div class="flex items-center mb-3 gap-3 hover:cursor-pointer">
-                      <input type="checkbox" class="rounded hover:cursor-pointer" id="user.attributes.terms" name="user.attributes.terms" />
-                      <label for="user.attributes.terms" class="text-sm hover:cursor-pointer">Estoy de acuerdo con los <a href="#" target="_blank" class="underline text-gray-600">Términos y Condiciones</a> del sitio y <a href="#" target="_blank" class="underline text-gray-600">Privacidad de Datos</a> (Obligatorio)</label>
+                      <input type="checkbox" class="rounded hover:cursor-pointer" id="user.attributes.terms" name="user.attributes.terms" required checked/>
+                      <label for="user.attributes.terms" class="text-sm hover:cursor-pointer">Estoy de acuerdo con los <a href="https://static.latamautos.com/terms-and-conditions/public-app/terms-and-conditions-seminuevos-new.html" target="_blank" class="underline text-gray-600">Términos y Condiciones</a> del sitio y <a href="https://static.latamautos.com/privacy-notice/public-app/privacy-notice-seminuevos.html" target="_blank" class="underline text-gray-600">Privacidad de Datos</a> (Obligatorio) *</label>
                     </div>
                     <div class="grid grid-cols-2 mt-8 gap-4">
                       <@button.kw color="blue" type="submit">
